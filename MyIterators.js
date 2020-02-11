@@ -7,7 +7,7 @@ Array.prototype.myMap = function (callbackFunc) {
     return mapArr;
 }
 
-//console.log([1, 2, 3].myMap(el => el * 2));
+console.log([1, 2, 3].myMap(el => el * 2));
 
 
 //My filter
@@ -21,7 +21,7 @@ Array.prototype.myFilter = function (callbackFunc) {
     return filterArr;
 }
 
-//console.log(['Maria', 'Demi', 'Louisa'].myFilter(el => el.length > 4));
+console.log(['Maria', 'Demi', 'Louisa'].myFilter(el => el.length > 4));
 
 
 //My group by
@@ -42,7 +42,7 @@ let people = [
     { name: 'Jane', age: 20 }
 ];
 
-//console.log(people.myGroupBy('age')) //object of arrays of objects
+console.log(people.myGroupBy('age')) //object of arrays of objects
 
 
 //My reduce
@@ -61,6 +61,7 @@ let people = [
         return accumulator;
     }
 }*/
+
 Array.prototype.myReduce = function (callbackFunc, initialVal = null) {
     let accumulator = initialVal;
     for (let i = 0; i < this.length; i++) {
@@ -69,8 +70,9 @@ Array.prototype.myReduce = function (callbackFunc, initialVal = null) {
     return accumulator;
 }
 
-//console.log(['s', 'o', 'f'].myReduce((acc, el) => ({ ...acc, [el]: el })));
-//console.log([1, 2, 3].myReduce((acc, el) => acc + el))
+console.log(['s', 'o', 'f'].myReduce((acc, el) => ({ ...acc, [el]: el })));
+console.log([1, 2, 3].myReduce((acc, el) => acc + el))
+
 
 //My map with reduce
 Array.prototype.myMapII = function (callbackFunc) {
@@ -90,7 +92,7 @@ Array.prototype.myFilterII = function (callbackFunc) {
     return this.reduce((accumulator, currentVal) => callbackFunc(currentVal) ? [...accumulator, currentVal] : accumulator, [])
 }
 
-//console.log(['Maria', 'Demi', 'Louisa'].myFilterII(el => el.length > 4));
+console.log(['Maria', 'Demi', 'Louisa'].myFilterII(el => el.length > 4));
 
 
 //My group by with reduce
@@ -103,4 +105,4 @@ Array.prototype.myGroupByII = function (property) {
     }, {});
 }
 
-//console.log(people.myGroupByII('age')) 
+console.log(people.myGroupByII('age')) 
