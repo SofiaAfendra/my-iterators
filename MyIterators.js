@@ -36,6 +36,19 @@ Array.prototype.myGroupBy = function (property) {
     return objOfArr;
 }
 
+const groupBy = (list, grouper) => {
+    const fGrouper = typeof grouper === 'string' ? (obj => obj[grouper]) : grouper;
+    return list.reduce(
+        (groups, element) => {
+            const group = fGrouper(element);
+            groups[group] = groups[group] || [];
+            groups[group].push(element);
+            return groups;
+        },
+        {},
+    );
+}
+
 let people = [
     { name: 'Alice', age: 21 },
     { name: 'Max', age: 20 },
