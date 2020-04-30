@@ -55,7 +55,7 @@ let people = [
     { name: 'Jane', age: 20 }
 ];
 
-console.log(people.myGroupBy('age')) //object of arrays of objects
+console.log(people.myGroupBy('age'))
 
 
 //My reduce
